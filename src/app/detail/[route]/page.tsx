@@ -6,7 +6,6 @@ export default async function Detail({
 }: {
   params: { route: number };
 }) {
-  console.log("props?", params.route);
   const client = await connectDB;
   const db = client.db("forum");
   let result = await db
