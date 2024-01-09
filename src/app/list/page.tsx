@@ -2,6 +2,8 @@ import { connectDB } from "../../../util/database";
 import ListItem from "./ListItem";
 import { ObjectId } from "mongodb";
 
+export const dynamic = "force-dynamic";
+
 export default async function List() {
   const client = await connectDB;
   const db = client.db("forum");

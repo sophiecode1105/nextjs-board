@@ -1,6 +1,7 @@
 "use client";
 
 import type { WithId, Document } from "mongodb";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname, useRouter, useParams } from "next/navigation";
 
@@ -12,6 +13,7 @@ export default function ListItem({ result }: { result: WithId<Document>[] }) {
   //이걸 안사용하려면 router.prefetch를 사용하면됨\
 
   //삭제시 form 태그 사용 혹은 ajax사용
+  //get 요청에서 query string으로 데이터 보내거나, URL parameter로 데이터 보내거나
 
   return (
     <div>
