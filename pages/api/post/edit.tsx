@@ -6,7 +6,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("여기로들어오나요", req.body);
   if (req.method === "POST") {
     if (req.body.title === "") {
       return res.status(500).json({ message: "please fill title" });

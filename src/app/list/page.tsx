@@ -1,24 +1,39 @@
-import { connectDB } from "../../../util/database";
-import ListItem from "./ListItem";
-import { ObjectId } from "mongodb";
+"use client";
+
+import { authOptions } from "../../../pages/api/auth/[...nextauth]";
+import ListItem from "./listItem";
+import type { WithId, Document } from "mongodb";
+import { useEffect, useState } from "react";
+import { getServerSideProps } from "next/dist/build/templates/pages";
+import { getSession } from "next-auth/react";
+import { Session } from "next-auth";
 
 export const dynamic = "force-dynamic";
 
-export default async function List() {
-  const client = await connectDB;
-  const db = client.db("forum");
-  let result = await db.collection("post").find().toArray();
+export default function List() {
+  const [session, setSession] = useState<Session | null>(null);
+  const [result, setResult] = useState<WithId<Document>[]>([]);
 
-  result = result.map((a) => {
-    a._id = a._id.toString() as unknown as ObjectId;
-    return a;
-  });
-
-  //비동기를 동기로 바꿔주는 await
+  useEffect(() => {
+    async function getResutl() {
+      const response = await fetch("http://localhost:3000/api/post/getlist", {
+        method: "GET",
+        cache: "no-store",
+      });
+      const resData = await response.json();
+      setResult(resData.data.reverse());
+    }
+    getResutl();
+    async function retrieveSession() {
+      const session = await getSession();
+      setSession(session);
+    }
+    retrieveSession();
+  }, []);
 
   return (
     <div className="list-bg">
-      <ListItem result={result} />
+      <ListItem email={session?.user?.email} result={result} />
     </div>
   );
 }

@@ -1,0 +1,73 @@
+.container {
+    border: 1px solid grey;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.button_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.edit_btn, 
+.delete_btn {
+    all: unset;
+    border: 1.8px solid saddlebrown;
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.edit_btn:hover,
+.delete_btn:hover {
+    cursor: pointer;
+    background-color: saddlebrown;
+    color: white;
+}
+
+
+
+
+.list_btn {
+    all: unset;
+    border: 1.8px solid saddlebrown;
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.list_btn:hover {
+    cursor: pointer;
+    background-color: saddlebrown;
+    color: white;
+}
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 0 0 ;
+}
+
+.author {
+    font-size: 18px;
+    margin: 3px 0 0 0;
+    font-weight: 400;
+}
+.content_textBox {
+    display: flex;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px 0;
+}

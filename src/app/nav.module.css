@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
+    background-color: wheat;
+}
+
+.logo_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.logo_img {
+    width: 30px;
+    height: 30px;
+}
+
+.maypage_wrapper {
+    position: relative;
+}
+
+.mypage_icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    width: 100px;
+    height: 50px;
+    right: -20px;
+    background: #313131;
+     color: #fff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+}
+
+.login_btn {
+    all: unset;
+    border: 1.6px solid black;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+

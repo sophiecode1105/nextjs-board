@@ -1,0 +1,20 @@
+.post_alignment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.button_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.link_hover:hover {
+    color: sienna
+}
