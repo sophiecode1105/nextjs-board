@@ -16,7 +16,7 @@ export default function List() {
 
   useEffect(() => {
     async function getResutl() {
-      const response = await fetch("http://localhost:3000/api/post/getlist", {
+      const response = await fetch("/api/post/getlist", {
         method: "GET",
         cache: "no-store",
       });
