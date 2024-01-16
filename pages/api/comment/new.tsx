@@ -8,7 +8,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("아직~~");
   if (req.method === "POST") {
     const session = await getServerSession(req, res, authOptions);
     const reqBody = JSON.parse(req.body);
@@ -19,6 +18,7 @@ export default async function handler(
     };
     const db = (await connectDB).db("forum");
     const result = await db.collection("comment").insertOne(newComment);
-    res.status(200).json("저장완료");
+    console.log("저장안되민?", result);
+    res.status(200).json("saved");
   }
 }

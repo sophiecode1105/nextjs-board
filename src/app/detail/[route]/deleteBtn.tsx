@@ -17,7 +17,7 @@ export default function DeleteBtn({ postId }: { postId: string | undefined }) {
         method: "DELETE",
         body: JSON.stringify({ postId }),
       });
-      console.log("왜삭제가안되는거요/?", res);
+
       if (res.ok) {
         router.push("/list");
         // 삭제 요청이 성공하면 리스트를 다시 불러와서 갱신

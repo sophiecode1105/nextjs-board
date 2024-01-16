@@ -11,11 +11,11 @@ export default async function handler(
   const client = await connectDB;
   const db = client.db("forum");
   let result = await db.collection("post").find().toArray();
-  console.log("map이오래걸리나?");
+
   result = result.map((list) => {
     list._id = list._id.toString() as unknown as ObjectId;
     return list;
   });
-  console.log("순서대로아냐?");
+
   res.status(200).json({ data: result });
 }

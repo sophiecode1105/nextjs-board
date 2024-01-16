@@ -8,7 +8,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import ListItem from "./list/listItem";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
+  console.log("home삭제된거 왜 안주나요?");
   const client = await connectDB;
   const db = client.db("forum");
   let result = await db.collection("post").find().toArray();
