@@ -6,7 +6,7 @@ import { ObjectId } from "mongodb";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../pages/api/auth/[...nextauth]";
-import ListItem from "./list/listItem";
+import Forum from "./list/forum";
 
 export const dynamic = "force-dynamic";
 
@@ -36,7 +36,7 @@ export default async function Home() {
       </div>
 
       <div>
-        <ListItem
+        <Forum
           email={session?.user?.email}
           result={result.reverse().slice(0, 5)}
         />

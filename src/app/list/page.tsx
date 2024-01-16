@@ -1,12 +1,13 @@
 "use client";
 
 import { authOptions } from "../../../pages/api/auth/[...nextauth]";
-import ListItem from "./listItem";
+import ListItem from "./forum";
 import type { WithId, Document } from "mongodb";
 import { useEffect, useState } from "react";
 import { getServerSideProps } from "next/dist/build/templates/pages";
 import { getSession } from "next-auth/react";
 import { Session } from "next-auth";
+import Forum from "./forum";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,7 @@ export default function List() {
 
   return (
     <div className="list-bg">
-      <ListItem email={session?.user?.email} result={result} />
+      <Forum email={session?.user?.email} result={result} />
     </div>
   );
 }

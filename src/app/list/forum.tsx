@@ -7,10 +7,10 @@ import Link from "next/link";
 import { usePathname, useRouter, useParams } from "next/navigation";
 import deleteIcon from "../../assets/delete.png";
 import Image from "next/image";
-import styles from "./listItem.module.css";
+import styles from "./forum.module.css";
 import { useEffect, useState } from "react";
 
-export default function ListItem({
+export default function Forum({
   result,
   email,
 }: {
